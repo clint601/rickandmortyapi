@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            <% data.forEach(character => { %>
+                <div class="col">
+                    <div class="card character-card h-100">
+                        <header class="card-header">
+                            <h2 class="card-title">
+                                <%= character.name %>
+                            </h2>
+                        </header>
+                        <img src="<%= character.image %>" alt="<%= character.name %>" class="card-img-top img-fluid">
+                        <div class="card-footer">
+                            <a href="/<%= path %>/<%= character.id %>" class="card-footer link">view more</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

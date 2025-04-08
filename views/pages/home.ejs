@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+    <main class="main" id="main">
+        <div class="container">
+            <figure class="figure">
+                <img src="<%= character.image %>" alt="<%= character.title %>" class="figure-img img-fluid w-50 home-img">
+                <figcaption class="figure-capton">
+                    <a href="/characters/<%= character.id %>" class="character-link">
+                        <%= character.title %>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    </main>
+
+
+
+
+    <%- include('../partials/footer') %>

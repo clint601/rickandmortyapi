@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="mainSingleMain">
+    <div class="row">
+        <div class="col-7">
+            <img src="<%= data.image %>" alt="<%= data.title %>" class="img-fluid w-75">
+        </div>
+        <div class="col-5">
+            <nav class="navigation">
+                <ul class="pagination">
+                    <% if (data.id > 1) { %>
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id - 1 %>" class="page-link">Previous</a>
+                        </li>
+                    <% } %>
+
+                    <% if (data.id < count) { %> 
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id + 1 %>" class="page-link">Next</a>
+                    <% } %>
+                </ul>
+            </nav>  
+            <ul class="stat-list list-group-flush">
+                <li class="list-item">
+                    Status: <%= data.status %>
+                </li>
+                <li class="list-item">
+                    Species: <%= data.species %></li>
+                <li class="list-item">
+                    Gender: <%= data.gender %>
+                </li>
+                <li class="list-item">
+                    Origin: <%= data.origin %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
