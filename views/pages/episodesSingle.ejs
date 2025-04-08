@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="mainSingleMain">
+    <div class="row">
+        <div class="col-5">
+            <nav class="navigation">
+                <ul class="pagination">
+                    <% if (data.id > 1) { %>
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id - 1 %>" class="page-link">Previous</a>
+                        </li>
+                    <% } %>
+
+                    <% if (data.id < count) { %> 
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id + 1 %>" class="page-link">Next</a>
+                    <% } %>
+                </ul>
+            </nav>  
+            <div class="col">
+                <div class="card character-card h-100">
+                    <header class="card-header">
+                        <h2 class="card-title">
+                            <%= data.name %>
+                        </h2>
+                    </header>
+                    <div class="card-body">
+                        <p class="air-date">Aired: <%= data.air_date %></p>
+                    </div>
+                    <p class="num-episode">Episode:<%= data.episode %></p>
+                    <p class="num-season">Season:<%= data.season %></p>
+                    <div class="card-footer">
+                    </div>
+                </div>
+        </div>
+    </div>
+</main>

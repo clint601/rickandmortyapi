@@ -7,6 +7,10 @@ router.use(express.static('public'))
 const characterRoutes = require('./api/charRoutes')
 router.use('/characters', characterRoutes)
 
+const episRoutes =require('./api/episodeRoutes')
+router.use('/episodes', episRoutes)
+
+
 
 //home
 router.get('/', (req, res) => {

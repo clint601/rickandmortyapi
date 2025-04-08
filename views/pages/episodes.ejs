@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            <% data.forEach(episode => { %>
+                <div class="col">
+                    <div class="card character-card h-100">
+                        <header class="card-header">
+                            <h2 class="card-title">
+                                <%= episode.name %>
+                            </h2>
+                        </header>
+                        <div class="card-body">
+                            <p class="air-date">Aired: <%= episode.air_date %></p>
+                        </div>
+                        <p class="num-episode">Episode:<%= episode.episode %></p>
+                        <p class="num-season">Season:<%= episode.season %></p>
+                        <div class="card-footer">
+                            <a href="/<%= path %>/<%= episode.id %>" class="card-footer link">view more</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
