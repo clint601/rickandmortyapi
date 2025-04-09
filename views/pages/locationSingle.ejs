@@ -14,6 +14,7 @@
                     <% if (data.id < count) { %> 
                         <li class="page-item">
                             <a href="/<%= path %>/<%= data.id + 1 %>" class="page-link">Next</a>
+                        </li>
                     <% } %>
                 </ul>
             </nav>  
@@ -21,14 +22,11 @@
                 <div class="card character-card h-100">
                     <header class="card-header">
                         <h2 class="card-title">
-                            <%= location.name %>
+                            <%= data.name %>
                         </h2>
                     </header>
                     <div class="card-body">
-                        <p class="dimenion_text">:dimenion <%= location.dimenion %></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/<%= path %>/<%= location.id %>" class="card-footer link">view more</a>
+                        <p class="dimenion_text">dimenion: <%= data.dimension %></p>
                     </div>
                 </div>
             </div>
