@@ -6,6 +6,26 @@ let count
 axios.get('https://api.sampleapis.com/rickandmorty/characters')
 .then(res => count = res.data.length)
 
+router.get('/type/:type', (req, res)=> {
+    const type = req.params.type
+    const url = 'https://api.sampleapis.com/rickandmorty/characters'
+
+    let typeArr
+
+    axios.get(url)
+    .then(resp => typeArr = resp.data.filter(item => item.type == type))
+    .then(typeArr => {
+        res.render('pages/characters', {
+            title: type,
+            name: `${type} characters`,
+            data: typeArr
+        })
+    })
+
+})
+
+
+
 
 //localhost:3000/characters
 router.get('/', (req, res) => {

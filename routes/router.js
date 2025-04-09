@@ -7,9 +7,11 @@ router.use(express.static('public'))
 const characterRoutes = require('./api/charRoutes')
 router.use('/characters', characterRoutes)
 
-const episRoutes =require('./api/episodeRoutes')
+const episRoutes = require('./api/episodeRoutes')
 router.use('/episodes', episRoutes)
 
+const locRoutes = require('./api/locationRoutes')
+router.use('/locations', locRoutes)
 
 
 //home
