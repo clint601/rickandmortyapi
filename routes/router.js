@@ -15,7 +15,7 @@ router.use('/locations', locRoutes)
 
 
 //home
-router.get('/', (req, res) => {
+router.get('/', (req, res)=> {
     res.render('pages/home', {
         title: 'Rick and Morty',
         name: 'Cartoon',

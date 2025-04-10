@@ -18,7 +18,8 @@ router.get('/type/:type', (req, res)=> {
         res.render('pages/characters', {
             title: type,
             name: `${type} characters`,
-            data: typeArr
+            data: typeArr,
+            path: `characters/type/$type`
         })
     })
 
